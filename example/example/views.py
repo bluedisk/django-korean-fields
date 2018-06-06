@@ -7,7 +7,6 @@ from jumin.fields import JuminFormField
 
 class TestForm(forms.Form):
     jumin = JuminFormField()
-    another = CharField(label='test', max_length=10, required=False)
 
 
 def demo(request):

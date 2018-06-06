@@ -10,7 +10,7 @@ Django용 주민등록번호 필드 &amp; 위젯
 - 그 외 앵간한거 그냥 다 됨
 
 #### Demo
-![Demo](./demo/demo.gif)
+![Demo](./demo/demo_small.gif)
 
 #### Example
 
