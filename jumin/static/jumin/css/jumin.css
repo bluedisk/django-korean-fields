@@ -1,0 +1,19 @@
+div.jumin-group {
+}
+
+.jumin-group .form-control:first-child {
+    border-left-width: 1px;
+    border-radius: 5px 0 0 5px;
+    padding: 0px 23px;
+}
+
+.jumin-group .form-control:last-child {
+    border-right-width: 1px;
+    border-radius: 0 5px 5px 0;
+}
+
+.jumin-group .form-control {
+    border-width: 1px 0;
+    border-radius: 0;
+    vertical-align: top;
+}
