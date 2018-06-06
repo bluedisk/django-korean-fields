@@ -1,13 +1,13 @@
 div.jumin-group {
 }
 
-.jumin-group .form-control:first-child {
+.jumin-group .form-control.jumin-left {
     border-left-width: 1px;
     border-radius: 5px 0 0 5px;
     padding: 0px 23px;
 }
 
-.jumin-group .form-control:last-child {
+.jumin-group .form-control.jumin-right {
     border-right-width: 1px;
     border-radius: 0 5px 5px 0;
 }

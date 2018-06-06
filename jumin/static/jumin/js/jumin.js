@@ -43,6 +43,7 @@ jQuery(function($) {
             $(this).val(val);
         }
 
+        $(this).parents('.jumin-group').removeClass('has-error');
         $(this).tooltip('hide');
     });
 
@@ -58,6 +59,7 @@ jQuery(function($) {
             $(this).val(val);
         }
 
+        $(this).parents('.jumin-group').removeClass('has-error');
         $(this).tooltip('hide');
     });
 
@@ -68,6 +70,7 @@ jQuery(function($) {
 
         var error = check_jumin_date(val);
         if ( error ) {
+            $(this).parents('.jumin-group').addClass('has-error');
             $(this).tooltip({
                 trigger: 'manual',
                 title: error
@@ -82,6 +85,7 @@ jQuery(function($) {
         var lval = $(this).parents('.jumin-group').find('.jumin-left').val();
 
         if ( !check_jumin(lval+rval) ) {
+            $(this).parents('.jumin-group').addClass('has-error');
             $(this).tooltip({
                 trigger: 'manual',
                 title: '잘못된 형식 입니다.'

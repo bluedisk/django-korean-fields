@@ -10,7 +10,7 @@ class TestForm(forms.Form):
     another = CharField(label='test', max_length=10, required=False)
 
 
-def test(request):
+def demo(request):
     if request.method == 'POST':
         form = TestForm(request.POST)
         if form.is_valid():
@@ -19,4 +19,4 @@ def test(request):
     else:
         form = TestForm(initial={'jumin': '010203-4567890'})
 
-    return render(request, 'jumin/test.html', {'form': form})
+    return render(request, 'demo.html', {'form': form})
