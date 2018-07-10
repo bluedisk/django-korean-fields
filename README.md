@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 from django.db import models
 from jumin.fields import JuminField
 
-class YouEveryThingModel(models.Model):
+class YourEverythingModel(models.Model):
 
     name = models.CharField(u'실명', max_length=20)
     
