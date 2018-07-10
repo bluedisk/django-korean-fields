@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jumin',
+    'korean',
     'example',
 
     'django.contrib.admin',

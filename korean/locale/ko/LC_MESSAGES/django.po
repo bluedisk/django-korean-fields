@@ -19,10 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 
-#: jumin/fields.py:17 jumin/fields.py:31
+#: korean/fields.py:17 korean/fields.py:31
 msgid "Wrong jumin format"
 msgstr "잘못된 주민번호 형식입니다."
 
-#: jumin/fields.py:27
+#: korean/fields.py:27
 msgid "Wrong date"
 msgstr "잘못된 주민번호 생년월일입니다."
