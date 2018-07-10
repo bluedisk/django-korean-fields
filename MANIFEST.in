@@ -1,4 +1,4 @@
 include LICENSE
 include README.md
-recursive-include jumin/static *
-recursive-include jumin/templates *
+recursive-include korean/static *
+recursive-include korean/templates *
