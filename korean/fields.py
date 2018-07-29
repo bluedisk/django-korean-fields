@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.forms import fields
 from django.db import models
-from .widgets import JuminWidget
+from .widgets import JuminWidget, SaupWidget, BupinWidget, CellPhoneWidget
 
 from django.utils.translation import gettext_lazy as _
 from calendar import monthrange
@@ -38,19 +38,102 @@ class JuminFormField(fields.CharField):
     def __init__(self, *args, **kwargs):
         self.max_length = 14
         kwargs['max_length'] = self.max_length
-        super(JuminFormField, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
 
 class JuminField(models.CharField):
-    widget = JuminWidget
     default_validators = [jumin_validator]
 
     def __init__(self, *args, **kwargs):
         self.max_length = 14
         kwargs['max_length'] = self.max_length
-        super(JuminField, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def formfield(self, **kwargs):
         defaults = {'max_length': self.max_length, 'widget': JuminWidget}
+        defaults.update(kwargs)
+        return super().formfield(**defaults)
+
+
+def saup_validator(value):
+    pass
+
+
+class SaupFormField(fields.CharField):
+    widget = SaupWidget
+    default_validators = [saup_validator]
+
+    def __init__(self, *args, **kwargs):
+        self.max_length = 12
+        kwargs['max_length'] = self.max_length
+        super().__init__(*args, **kwargs)
+
+
+class SaupField(models.CharField):
+    default_validators = [saup_validator]
+
+    def __init__(self, *args, **kwargs):
+        self.max_length = 12
+        kwargs['max_length'] = self.max_length
+        super().__init__(*args, **kwargs)
+
+    def formfield(self, **kwargs):
+        defaults = {'max_length': self.max_length, 'widget': SaupWidget}
+        defaults.update(kwargs)
+        return super().formfield(**defaults)
+
+
+def bupin_validator(value):
+    pass
+
+
+class BupinFormField(fields.CharField):
+    widget = BupinWidget
+    default_validators = [bupin_validator]
+
+    def __init__(self, *args, **kwargs):
+        self.max_length = 14
+        kwargs['max_length'] = self.max_length
+        super().__init__(*args, **kwargs)
+
+
+class BupinField(models.CharField):
+    default_validators = [bupin_validator]
+
+    def __init__(self, *args, **kwargs):
+        self.max_length = 14
+        kwargs['max_length'] = self.max_length
+        super().__init__(*args, **kwargs)
+
+    def formfield(self, **kwargs):
+        defaults = {'max_length': self.max_length, 'widget': BupinWidget}
+        defaults.update(kwargs)
+        return super().formfield(**defaults)
+
+
+def cell_validator(value):
+    pass
+
+
+class CellPhoneFormField(fields.CharField):
+    widget = CellPhoneWidget
+    default_validators = [cell_validator]
+
+    def __init__(self, *args, **kwargs):
+        self.max_length = 13
+        kwargs['max_length'] = self.max_length
+        super().__init__(*args, **kwargs)
+
+
+class CellPhoneField(models.CharField):
+    default_validators = [cell_validator]
+
+    def __init__(self, *args, **kwargs):
+        self.max_length = 13
+        kwargs['max_length'] = self.max_length
+        super().__init__(*args, **kwargs)
+
+    def formfield(self, **kwargs):
+        defaults = {'max_length': self.max_length, 'widget': CellPhoneWidget}
         defaults.update(kwargs)
         return super().formfield(**defaults)

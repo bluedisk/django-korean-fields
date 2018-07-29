@@ -1,19 +1,36 @@
-div.jumin-group {
+div.korean-group {
+    display: flex;
 }
 
-.jumin-group .form-control.jumin-left {
-    border-left-width: 1px;
-    border-radius: 5px 0 0 5px;
-    padding: 0px 23px;
+.korean-group .korean {
+    padding: 0 7px;
+    border: 0;
 }
 
-.jumin-group .form-control.jumin-right {
-    border-right-width: 1px;
-    border-radius: 0 5px 5px 0;
+.korean-group .form-inline {
+    display: inline-flex;
+    margin: auto;
 }
 
-.jumin-group .form-control {
+.korean-group .form-control {
     border-width: 1px 0;
     border-radius: 0;
     vertical-align: top;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    overflow: visible;
+}
+
+.is-invalid .korean-group {
+    border-color: #dc3545;
+}
+
+.is-valid .korean-group {
+    border-color: #28a745;
+}
+
+.is-invalid .form-control.korean-group~.invalid-feedback {
+    display: block;
 }

@@ -1,16 +1,13 @@
 /* global jQuery */
 jQuery(function($) {
-    $('.jumin-group').each(function(idx, group) {
-        $(group).find('input').synchronize();
-    });
 
     // verifing
-    $('.jumin-group input.korean-first').on('blur', function(e) {
+    $('.korean-group input').eq(0).on('blur', function(e) {
         var val = $(this).val();
 
         var error = check_jumin_date(val);
         if ( error ) {
-            $(this).parents('.jumin-group').addClass('has-error');
+            $(this).parents('.korean-group').addClass('has-error');
             $(this).tooltip({
                 trigger: 'manual',
                 title: error
@@ -18,17 +15,17 @@ jQuery(function($) {
 
             $(this).tooltip('show');
         } else {
-            $(this).parents('.jumin-group').removeClass('has-error');
+            $(this).parents('.korean-group').removeClass('has-error');
             $(this).tooltip('hide');
         }
     });
 
-    $('.jumin-group input.korean-last').on('blur', function(e) {
+    $('.korean-group input').eq(1).on('blur', function(e) {
         var rval = $(this).val();
-        var lval = $(this).parents('.jumin-group').find('.jumin-left').val();
+        var lval = $(this).parents('.korean-group').find('input.korean').eq(0).val();
 
-        if ( !check_jumin(lval+rval) ) {
-            $(this).parents('.jumin-group').addClass('has-error');
+        if ( rval !== '' && !check_jumin(lval+rval) ) {
+            $(this).parents('.korean-group').addClass('has-error');
             $(this).tooltip({
                 trigger: 'manual',
                 title: '잘못된 형식 입니다.'
@@ -36,7 +33,7 @@ jQuery(function($) {
 
             $(this).tooltip('show');
         } else {
-            $(this).parents('.jumin-group').removeClass('has-error');
+            $(this).parents('.korean-group').removeClass('has-error');
             $(this).tooltip('hide');
         }
     });
@@ -60,6 +57,7 @@ jQuery(function($) {
     }
 
     function check_jumin(code) {
+        if ( code === '' ) return true;
         if ( code.length !== 13 ) return false;
 
         var sum = 0;

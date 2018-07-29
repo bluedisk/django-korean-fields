@@ -23,13 +23,13 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.1.2',
+    version='0.2.0',
 
     description='Django field & widget for korean people registration code aka Jumin-bunho',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/bluedisk/django-jumin',
+    url='https://github.com/bluedisk/django-korean-fields',
 
     # Author details
     author='Matthew, lee',
@@ -58,17 +58,15 @@ setup(
         'Environment :: Web Environment',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation :: PyPy'
     ],
 
     # What does your project relate to?
-    keywords='django field widget korean registration jumin bunho',
+    keywords='django field widget korean registration jumin saup bupin',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().

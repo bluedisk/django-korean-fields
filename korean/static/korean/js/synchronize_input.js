@@ -7,7 +7,7 @@ jQuery.fn.synchronize = function() {
 
     this.each(function(idx, input) {
         inputs.push(input);
-        limits.push(parseInt($(input).attr('size')));
+        limits.push(parseInt($(input).attr('size') - 1));
         $(input).data('order', idx);
     });
 
@@ -84,3 +84,14 @@ jQuery.fn.synchronize = function() {
     });
 
 };
+
+jQuery(function($) {
+    $('.korean-group').each(function (idx, group) {
+        $(group).find('input').synchronize();
+    });
+
+    $('.korean-group').on('click', function (e) {
+        if (e.target === this)
+            $(this).children('.form-inline').children('input').eq(0).focus();
+    });
+});

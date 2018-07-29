@@ -1,0 +1,20 @@
+{% spaceless %}
+    <div class="form-control korean-group" id="{{ widget.name }}"  {% include "django/forms/widgets/attrs.html" %}>
+        <div class="form-inline">
+
+            {% for size, placeholder, value in widget.value %}
+                <input type="{{ widget.type }}" size="{{ size|add:1 }}"
+                       class="korean"
+                       id="id_{{ widget.name }}"
+                       name="{{ widget.name }}"{% if widget.value != None %}
+                       value="{{ value|stringformat:'s' }}"{% endif %}
+                       placeholder="{{ placeholder }}" {% include "django/forms/widgets/attrs.html" %}>
+
+                {% if not forloop.last %}
+                    <div class="korean"> -</div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+{% endspaceless %}

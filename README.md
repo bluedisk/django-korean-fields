@@ -17,17 +17,17 @@ Django용 주민등록번호 필드 &amp; 위젯
 example 폴더 참조
 
 ## 의존성
-- Twitter bootstrap 3
+- Twitter bootstrap 3 or 4
 - jQuery
-- Django (2.0+만 테스트)
-- django-bootstrap-form 사용하면 좋음(안해도되고...)
+- Django (2.0+ 만 테스트)
+- django-bootstrap3 또는 django-bootstrap4 사용하면 좋음(안해도되고...)
 
 ## 사용법
-INSTALL_APPS에 'jumin'추가
+INSTALL_APPS에 'korean'추가
 
 ``` python
 INSTALLED_APPS = [
-    'jumin',
+    'korean',
     
     ...
     'my_app',
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.admin
 ```
 
-## model에서 사용 시 
+### model에서 사용 시 
 ```python
 from django.db import models
 from jumin.fields import JuminField
@@ -54,10 +54,23 @@ class YourEverythingModel(models.Model):
     ...
 ```    
 
-## form에서 사용 시
+### form에서 사용 시
 ```python
 class TestForm(forms.Form):
     jumin = JuminFormField()
     another = CharField(label='test', max_length=10, required=False)
 ```
 
+### 템플릿 상단에 Media 추가
+ex>
+```html
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% load admin_static suit_tags %}
+
+{% block extrastyle %}
+    <link type="text/css" rel="stylesheet" href="/static/css/basic.css" />
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+```
