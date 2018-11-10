@@ -74,7 +74,7 @@ ex>
 ## model에서 사용 시 
 ```python
 from django.db import models
-from jumin.fields import JuminField
+from korean.fields import JuminField
 
 class YourEverythingModel(models.Model):
 
